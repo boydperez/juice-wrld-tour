@@ -1,0 +1,53 @@
+.header {
+    height: calc(100vh - (#{$body-padding} * 2));
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    background-image: linear-gradient(
+            to right bottom,
+            rgba($color-white, 0.1),
+            rgba($color-white, 0.2)
+        ),
+        url(../images/header-lg.jpg);
+    background-size: cover;
+    background-position: 0 30%;
+    position: relative;
+    animation: img-slide-up 1s ease 0s forwards;
+
+    @include respond(phone) {
+      height: 100vh;
+        clip-path: none;
+        background-position: 50% 0;
+        animation: none;
+    }
+
+    &__logo {
+        width: 5.5rem;
+        position: absolute;
+        top: 2rem;
+        left: 3rem;
+        cursor: pointer;
+    }
+
+    &__title {
+        display: inline-block;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+        animation: text-appear 0.8s cubic-bezier(0.33, 0.54, 0.42, 1.21) 1s
+            forwards;
+
+        &-year {
+            display: block;
+            text-align: center;
+        }
+
+        @include respond(tab-port) {
+            top: 35%;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

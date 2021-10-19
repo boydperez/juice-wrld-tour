@@ -1,0 +1,170 @@
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: $color-white;
+        width: 6rem;
+        height: 6rem;
+        position: fixed;
+        top: calc(#{$body-padding} + 2rem);
+        right: calc(#{$body-padding} + 3rem);
+        border-radius: 50%;
+        z-index: 999;
+        cursor: pointer;
+        box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.12);
+        transition: all 1s;
+        transition-property: background-color, box-shadow;
+
+        @include respond(tab-port) {
+            top: 2rem;
+            right: 3rem;
+        }
+    }
+
+    &__icon-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5rem;
+        width: 4rem;
+        height: 0.14rem;
+        height: 0.11rem;
+    }
+
+    &__icon {
+        display: block;
+        position: absolute;
+        height: 0.14rem;
+        height: 0.11rem;
+        background-color: $color-secondary;
+        transition: top 0.2s, transform 0.3s;
+
+        &:nth-child(2) {
+            position: relative;
+            margin-left: auto;
+            width: 3rem;
+            width: 2rem;
+        }
+
+        &:not(:nth-child(2)) {
+            position: absolute;
+            width: 5rem;
+            width: 4rem;
+        }
+
+        &:first-child {
+            top: -1.13rem;
+        }
+        &:last-child {
+            top: 1.13rem;
+        }
+    }
+
+    &__background {
+        position: fixed;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        z-index: 500;
+        top: calc(#{$body-padding} + 2rem);
+        right: calc(#{$body-padding} + 3.5rem);
+        background-image: radial-gradient($color-primary, $color-secondary);
+        transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+
+        @include respond(tab-port) {
+            top: 2.8rem;
+            right: 3.5rem;
+        }
+    }
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 0;
+        z-index: 700;
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        pointer-events: none;
+    }
+
+    &__list {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    &__item {
+        margin-bottom: 5rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            padding: 1.4rem 2rem;
+            text-decoration: none;
+            background-image: linear-gradient(
+                120deg,
+                transparent 0%,
+                transparent 50%,
+                $color-white 50%
+            );
+            background-size: 250%;
+
+            font-size: 3.2rem;
+            color: $color-white;
+            transition: all 0.5s;
+        }
+
+        &:active,
+        &:hover {
+            background-position: 100%;
+            color: $color-secondary;
+        }
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+    }
+
+    &__button:hover &__icon:first-child {
+        @include hover-pointer {
+            top: -1.45rem;
+        }
+    }
+    &__button:hover &__icon:last-child {
+        @include hover-pointer {
+            top: 1.45rem;
+        }
+    }
+
+    &__checkbox:checked + &__button &__icon:nth-child(2) {
+        background-color: transparent;
+    }
+    &__checkbox:checked + &__button &__icon:first-child {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__checkbox:checked + &__button &__icon:last-child {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    &__checkbox:checked ~ &__background {
+        background-image: radial-gradient($color-primary, $color-secondary);
+        transform: scale(80);
+    }
+    &__checkbox:checked + &__button {
+        box-shadow: 0 1rem 3rem rgba(#000, 0.1);
+    }
+}

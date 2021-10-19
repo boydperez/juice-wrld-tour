@@ -1,0 +1,161 @@
+body {
+  // font-family: 'Luckiest Guy', cursive;
+  font-family: "Raleway", sans-serif;
+}
+
+.heading-primary {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 2.4rem;
+  color: $color-primary;
+}
+
+.btn {
+  font-family: inherit;
+
+  &--discover {
+    color: $color-secondary;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &--book {
+    color: $color-white;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  &--subscribe {
+    color: $color-white;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.header {
+  &__title {
+    font-family: "Luckiest Guy", cursive;
+    font-size: 4rem;
+    color: $color-white;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+
+    &-year {
+      font-size: 3.8rem;
+    }
+  }
+}
+
+.section-about {
+  .about-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $color-secondary;
+    line-height: 2.6rem;
+
+    @include respond(tab-port) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .about-more__text {
+    font-size: 1.2rem;
+    color: $color-blue;
+    &:hover {
+      color: darken($color-blue, 15%);
+    }
+  }
+}
+
+.section-album {
+  .albums {
+    .album {
+      &__name {
+        font-size: 1.4rem;
+        color: $color-secondary;
+      }
+
+      &__year {
+        font-size: 1.3rem;
+        color: $color-tertiary-1;
+      }
+    }
+  }
+}
+
+.section-tour {
+  .tour {
+    &__book-title {
+      font-weight: 500;
+      font-size: 2rem;
+    }
+
+    &__price--value {
+      font-weight: 600;
+      font-size: 4.2rem;
+      padding-right: 0.7rem;
+      color: $color-primary;
+    }
+
+    &__price--currency {
+      font-weight: 500;
+      font-size: 2.1rem;
+      text-transform: uppercase;
+      color: $color-primary;
+    }
+
+    &__guidlines {
+      @include reset-link;
+
+      color: $color-blue;
+      font-size: 1.1rem;
+
+      &:hover {
+        color: darken($color-blue, 25%);
+      }
+    }
+  }
+}
+
+.form {
+  &__input {
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $color-tertiary-2;
+  }
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $color-tertiary-1;
+  }
+  &__radio-label-text {
+    font-size: 1.5rem;
+  }
+  &__sidenote {
+    color: $color-white;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+}
+
+.footer {
+  &__item {
+    color: $color-white;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  &__copyrights {
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: rgba($color-white, 0.7);
+  }
+
+  .fa-circle {
+    font-size: 0.3rem;
+  }
+}

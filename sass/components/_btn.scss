@@ -1,0 +1,74 @@
+.btn {
+    display: block;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+
+    box-shadow: 0.3rem 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    transition-property: transform, box-shadow;
+
+    &:hover {
+        box-shadow: 0.5rem 0.9rem 0.9rem rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+        box-shadow: 0.35rem 0.6rem 0.9rem rgba(0, 0, 0, 0.1);
+    }
+
+    &--discover {
+        background-color: $color-white;
+        position: absolute;
+        top: 72%;
+        left: 50%;
+        transform: translate(-50%);
+        padding: 1.8rem 4.2rem;
+        opacity: 0;
+        animation: btn-appear 0.8s ease 1.8s forwards;
+
+        &:hover {
+            transform: translate(-50%, -0.3rem);
+        }
+
+        &:active {
+            transform: translate(-50%, -0.17rem);
+        }
+
+        @include respond(tab-port) {
+          top: 65%;
+          padding: 2rem 4rem;
+        }
+    }
+
+    &--book {
+        @include align-x;
+
+        background-color: $color-primary;
+        padding: 1.6rem 4rem;
+        margin-top: 6rem;
+
+        &:hover {
+            transform: translate(-50%, -0.3rem);
+        }
+
+        &:active {
+            transform: translate(-50%, -0.17rem);
+        }
+    }
+
+    &--subscribe {
+        background-color: $color-primary;
+        padding: 1.6rem 4rem;
+        box-shadow: 0.3rem 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease;
+        transition-property: transform, box-shadow;
+
+        &:hover {
+            transform: translateY(-0.3rem);
+        }
+
+        &:active {
+            transform: translateY(-0.17rem);
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.footer {
+    width: 100%;
+    background-color: $color-secondary;
+
+    &__content {
+        width: 86%;
+        margin: auto;
+        height: 30rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include respond(phone) {
+            flex-direction: column;
+            height: 50rem;
+            justify-content: space-around;
+        }
+    }
+
+    &__col--right {
+        padding: 0.5rem 0 0.5rem 2rem;
+        border-left: 0.2rem solid $color-white;
+
+        @include respond(phone) {
+            text-align: center;
+            border: none;
+            border-top: 0.2rem solid rgba($color-white, 0.08);
+            padding: 2.5rem;
+        }
+    }
+
+    // Footer left
+    &__logo-container {
+        margin: auto;
+        width: 8rem;
+    }
+    &__logo {
+        width: 8rem;
+        margin-bottom: 5rem;
+    }
+
+    &__media {
+        width: 2.8rem;
+        display: inline-block;
+        cursor: pointer;
+        transition: transform 0.1s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__media:not(:last-child) {
+        margin-right: 3rem;
+    }
+
+    // Footer right
+    &__item {
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        transition: all 0.2s;
+        transition-property: left, transform;
+
+        &:hover {
+            left: 1.2rem;
+            transform: scale(1.1);
+        }
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 2.6rem;
+    }
+
+    &__copyrights {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2rem;
+
+        .fa-copyright {
+            padding: 0 0.5rem;
+        }
+        .fa-circle {
+            padding: 0 1rem;
+        }
+    }
+}

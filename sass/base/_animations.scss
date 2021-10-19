@@ -1,0 +1,38 @@
+@keyframes img-slide-up {
+  from {
+    background-position: 0 30%;
+  }
+  to {
+    background-position: 0 36%;
+  }
+}
+
+@keyframes img-slide-up-phone {
+  from {
+    background-position: 50% 0%;
+  }
+  to {
+    background-position: 50% 5%;
+  }
+}
+
+
+@keyframes text-appear {
+  from {
+     opacity: 0;
+     transform: translateX(-50%) scale(0);
+  }
+  to {
+     opacity: 1;
+     transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes btn-appear {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
